@@ -40,3 +40,29 @@ grep -rnw "RTCPeerConnection" ~/www/themes/ ~/www/modules/
 
 # Identification des fichiers modifiés récemment (hors cache)
 find ~/www/ \( -name "*.php" -o -name "*.js" -o -name "*.tpl" \) -not -path "*/var/cache/*" -mtime -5
+
+## 🛡️ Procédure d'Assainissement & Sécurisation
+
+* **Nettoyage du code source :** Extraction du bloc malveillant dans le fichier de thème identifié.
+* **Purge de la mémoire vive & des caches :** Exécution de `flush.php` et vidage manuel du dossier `var/cache/`.
+* **Rotation complète des secrets :**
+  * Renouvellement des accès FTP, SSH et MySQL.
+  * Régénération des clés de sécurité (`cookie_key` dans `config/parameters.php`).
+  * Modification de tous les mots de passe administrateurs PrestaShop.
+* **Audits des accès :** Vérification de la table des employés (`ps_employee`) et analyse des logs de connexion.
+
+---
+
+## ⚖️ Conformité, CNIL & Volet Légal
+
+* **CNIL (RGPD Article 33) :** Notification de fuite de données transmise dans le délai légal de 72 heures.
+* **Dépôt de plainte :** Transmission aux services de gendarmerie/police d'un dossier technique complet (horodatages falsifiés, chemins de fichiers et les 4 adresses IP des serveurs de destination pour réquisitions judiciaires).
+* **Prévention clients :** Information ciblée auprès des clients ayant initié une commande durant la fenêtre de compromission du 18 septembre.
+
+---
+
+## 🛒 À propos du projet
+
+Ce travail de sécurisation et de documentation a été réalisé pour maintenir le plus haut niveau d'exigence et de protection sur notre boutique en ligne.
+
+Retrouvez nos produits d'exception et notre sélection d'épices directement sur **[Le Comptoir de Toamasina](https://lecomptoirdetoamasina.fr/fr/)**, spécialiste de la vanille, des baies rares et du **[poivre de Madagascar](https://lecomptoirdetoamasina.fr/fr/33-poivre-de-madagascar)**.
