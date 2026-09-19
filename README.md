@@ -18,7 +18,7 @@ L'attaque visait à intercepter furtivement les coordonnées bancaires saisies d
 
 ---
 
-## 🛠️ Scripts & Outils d'Investigation Inclus
+## 🛠️ Scripts & Outils d'Investigation
 
 ### 1. `scan.php` — Script de détection comportementale
 Permet de balayer l'ensemble du répertoire PrestaShop (`/themes/`, `/modules/`, `/controllers/`) sans se fier aux horodatages système, en recherchant les signatures spécifiques du pirate :
@@ -35,11 +35,13 @@ Permet d'effacer la mémoire RAM du serveur PHP afin d'expulser les versions com
 # Recherche de la signature du pirate dans l'arborescence
 grep -rnw "__prceCk" ~/www/
 
-# Détection des appels WebRTC suspects
+# Détection des appels WebRTC suspects dans les thèmes et modules
 grep -rnw "RTCPeerConnection" ~/www/themes/ ~/www/modules/
 
 # Identification des fichiers modifiés récemment (hors cache)
 find ~/www/ \( -name "*.php" -o -name "*.js" -o -name "*.tpl" \) -not -path "*/var/cache/*" -mtime -5
+
+
 
 ## 🛡️ Procédure d'Assainissement & Sécurisation
 
